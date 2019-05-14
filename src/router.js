@@ -22,6 +22,7 @@ export default new Router({
     {
       path: "/users/:userId",
       name: "userDetails",
+      props: true,
       component: () =>
         import(/* webpackChunkName: "users" */ "./views/UserDetails.vue")
     },

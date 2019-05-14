@@ -1,8 +1,5 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" absolute temporary>
-      Usuário
-    </v-navigation-drawer>
     <v-container>
       <v-layout text-xs-center wrap>
         <v-btn

@@ -22,6 +22,12 @@
 import { mapState } from "vuex";
 export default {
   name: "users",
+  props: {
+    userId: {
+      type: Number,
+      required: true
+    }
+  },
   data() {
     return {};
   },
@@ -31,7 +37,7 @@ export default {
     }),
     selectedUser() {
       return this.users.find(user => {
-        return user.id === this.$route.params.userId;
+        return user.id === this.userId;
       });
     }
   }
