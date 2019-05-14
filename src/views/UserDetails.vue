@@ -2,7 +2,11 @@
   <v-container>
     <v-btn :to="{ name: 'users' }">Voltar</v-btn>
     <v-card>
-      <v-img :src="selectedUser.img" aspect-ratio="2.75"></v-img>
+      <v-img
+        v-if="viewImage"
+        :src="selectedUser.img"
+        aspect-ratio="2.75"
+      ></v-img>
 
       <v-card-title primary-title>
         <div>
@@ -12,7 +16,7 @@
       </v-card-title>
 
       <v-card-actions>
-        <v-btn flat color="orange">Compartilhar</v-btn>
+        <v-btn flat color="orange" @click="onViewImage">Ver imagem</v-btn>
       </v-card-actions>
     </v-card>
   </v-container>
@@ -24,12 +28,17 @@ export default {
   name: "users",
   props: {
     userId: {
-      type: Number,
       required: true
     }
   },
   data() {
     return {};
+  },
+  urlData: {
+    viewImage: {
+      type: Boolean,
+      default: false
+    }
   },
   computed: {
     ...mapState({
@@ -37,8 +46,13 @@ export default {
     }),
     selectedUser() {
       return this.users.find(user => {
-        return user.id === this.userId;
+        return String(user.id) === String(this.userId);
       });
+    }
+  },
+  methods: {
+    onViewImage() {
+      this.viewImage = !this.viewImage;
     }
   }
 };
