@@ -4,7 +4,11 @@
 
 ## Apresentação
 
+Vue Cli 3:
 https://drive.google.com/open?id=1niZEvFo0nyP6opk1L8zAlJkdIlRYI5aRZkOqZfhLghY
+
+Vue Router:
+https://drive.google.com/open?id=1aDXUs9kYqQTI75uTn9JQlBn8JicIwSCZi-c1OR-iO7Q
 
 ## Project setup
 ```
